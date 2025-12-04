@@ -1,12 +1,12 @@
 export function Hero() {
-    const element = document.createElement('section');
-    element.className = 'hero';
+  const element = document.createElement('section');
+  element.className = 'hero';
 
-    element.innerHTML = `
+  element.innerHTML = `
     <div class="hero-content">
-      <h1 class="hero-title">古典部</h1>
-      <p class="hero-subtitle">Preserving the Classic</p>
-      <div class="hero-scroll">
+      <h1 class="hero-title reveal">古典部</h1>
+      <p class="hero-subtitle reveal" style="transition-delay: 0.5s">Preserving the Classic</p>
+      <div class="hero-scroll reveal" style="transition-delay: 1s">
         <span class="scroll-text">Scroll</span>
         <div class="scroll-line"></div>
       </div>
@@ -14,10 +14,10 @@ export function Hero() {
     <div class="hero-overlay"></div>
   `;
 
-    // Add styles dynamically or assume they are in global/component css
-    // For this pilot, we'll append a style tag for component-specific styles
-    const style = document.createElement('style');
-    style.textContent = `
+  // Add styles dynamically or assume they are in global/component css
+  // For this pilot, we'll append a style tag for component-specific styles
+  const style = document.createElement('style');
+  style.textContent = `
     .hero {
       position: relative;
       height: 100vh;
@@ -113,7 +113,7 @@ export function Hero() {
       100% { transform: scaleY(0); transform-origin: bottom; }
     }
   `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 
-    return element;
+  return element;
 }

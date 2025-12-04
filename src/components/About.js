@@ -1,15 +1,15 @@
 export function About() {
-    const element = document.createElement('section');
-    element.className = 'about';
+  const element = document.createElement('section');
+  element.className = 'about';
 
-    element.innerHTML = `
+  element.innerHTML = `
     <div class="container">
       <div class="about-grid">
-        <div class="about-header">
+        <div class="about-header reveal">
           <h2 class="section-title">古典部とは</h2>
           <p class="section-subtitle">About Kotenbu</p>
         </div>
-        <div class="about-content">
+        <div class="about-content reveal">
           <p>
             新しいものは、今までできなかったことができるようになったりします。<br>
             逆に古いものはただ消えていくものです。<br>
@@ -33,8 +33,8 @@ export function About() {
     </div>
   `;
 
-    const style = document.createElement('style');
-    style.textContent = `
+  const style = document.createElement('style');
+  style.textContent = `
     .about {
       padding: var(--spacing-xl) 0;
       background-color: var(--color-bg);
@@ -81,7 +81,7 @@ export function About() {
       margin-top: var(--spacing-lg);
     }
   `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 
-    return element;
+  return element;
 }

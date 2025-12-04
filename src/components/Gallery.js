@@ -1,34 +1,34 @@
 export function Gallery() {
-    const element = document.createElement('section');
-    element.className = 'gallery';
+  const element = document.createElement('section');
+  element.className = 'gallery';
 
-    const collections = [
-        { title: '古銭', subtitle: 'Ancient Coins', color: '#8c8c8c' },
-        { title: '神社', subtitle: 'Shrines', color: '#c5a059' },
-        { title: '古典籍', subtitle: 'Classic Books', color: '#1a2a3a' }
-    ];
+  const collections = [
+    { title: '古銭', subtitle: 'Ancient Coins', color: '#8c8c8c' },
+    { title: '神社', subtitle: 'Shrines', color: '#c5a059' },
+    { title: '古典籍', subtitle: 'Classic Books', color: '#1a2a3a' }
+  ];
 
-    element.innerHTML = `
+  element.innerHTML = `
     <div class="container">
-      <div class="gallery-header">
+      <div class="gallery-header reveal">
         <h2 class="section-title">蒐集</h2>
         <p class="section-subtitle">Collections</p>
       </div>
       <div class="gallery-grid">
-        ${collections.map(item => `
-          <div class="gallery-item" style="--item-color: ${item.color}">
+        ${collections.map((item, index) => `
+          <a href="#/collection/${item.id}" class="gallery-item reveal" style="--item-color: ${item.color}; transition-delay: ${index * 0.1}s">
             <div class="gallery-item-content">
               <h3 class="gallery-item-title">${item.title}</h3>
               <p class="gallery-item-subtitle">${item.subtitle}</p>
             </div>
-          </div>
+          </a>
         `).join('')}
       </div>
     </div>
   `;
 
-    const style = document.createElement('style');
-    style.textContent = `
+  const style = document.createElement('style');
+  style.textContent = `
     .gallery {
       padding: var(--spacing-xl) 0;
       background-color: #e8e4da; /* Slightly darker washi */
@@ -98,7 +98,7 @@ export function Gallery() {
       font-size: 0.8rem;
     }
   `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 
-    return element;
+  return element;
 }
