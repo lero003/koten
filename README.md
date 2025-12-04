@@ -51,10 +51,15 @@ npm run preview
    - `Workers & Pages` → `Create application` → `Pages` → `Connect to Git`
    - GitHubリポジトリを選択
 
-3. **ビルド設定**
+3. **ビルド設定（重要！）**
+   
+   > [!IMPORTANT]
+   > ビルドコマンドを間違えると `dist not found` エラーが出ます！
+   
    - **フレームワークプリセット**: `Vite`
-   - **ビルドコマンド**: `npm run build`
+   - **ビルドコマンド**: `npm run build` ← **`npm install` ではありません！**
    - **ビルド出力ディレクトリ**: `dist`
+   - **Root directory**: （空欄でOK）
    - **環境変数** (必要に応じて):
      - `NODE_VERSION`: `18` または `20`
 
@@ -106,6 +111,21 @@ npm run preview
    - 現在は環境変数を使用していませんが、今後APIキーなどを使う場合は Cloudflare Pages の設定で追加してください
 
 ### トラブルシューティング
+
+#### ❌ `Error: Output directory "dist" not found` が出る場合
+
+**原因**: ビルドコマンドが間違っている
+
+**解決方法**:
+1. Cloudflare Pages → プロジェクトの Settings → Builds & deployments
+2. Build command を `npm install` → **`npm run build`** に変更
+3. Save して Retry deployment
+
+または、ローカルで確認：
+```bash
+npm run build
+ls dist  # distフォルダが生成されているか確認
+```
 
 #### ビルドエラーが出る場合
 ```bash
