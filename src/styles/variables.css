@@ -1,0 +1,28 @@
+:root {
+    /* Colors */
+    --color-bg: #f4f1ea;
+    /* Washi (Old Paper) */
+    --color-text: #2c2c2c;
+    /* Sumi (Ink) */
+    --color-primary: #1a2a3a;
+    /* Ai (Indigo) */
+    --color-accent: #c5a059;
+    /* Kin (Gold) */
+    --color-subtle: #8c8c8c;
+    /* Silver/Gray */
+
+    /* Typography */
+    --font-serif: "Shippori Mincho", "Noto Serif JP", serif;
+    --font-sans: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Transitions */
+    --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-default: 0.3s ease-out;
+}
